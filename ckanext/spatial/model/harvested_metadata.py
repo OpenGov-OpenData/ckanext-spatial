@@ -197,7 +197,7 @@ class ISOResourceLocator(ISOElement):
             ],
             multiplicity="0..1",
         ),
-        ]
+    ]
 
 
 class ISOResponsibleParty(ISOElement):
@@ -225,6 +225,50 @@ class ISOResponsibleParty(ISOElement):
             multiplicity="0..1",
         ),
         ISOElement(
+            name="contact-address",
+            search_paths=[
+                "gmd:address/gmd:CI_Address",
+            ],
+            multiplicity="*",
+            elements = [
+                ISOElement(
+                    name="deliveryPoint",
+                    search_paths=[
+                        "gmd:deliveryPoint/gco:CharacterString/text()",
+                    ],
+                    multiplicity="*",
+                ),
+                ISOElement(
+                    name="city",
+                    search_paths=[
+                        "gmd:city/gco:CharacterString/text()",
+                    ],
+                    multiplicity="0..1",
+                ),
+                ISOElement(
+                    name="administrative-area",
+                    search_paths=[
+                        "gmd:administrativeArea/gco:CharacterString/text()",
+                    ],
+                    multiplicity="0..1",
+                ),
+                ISOElement(
+                    name="postal-code",
+                    search_paths=[
+                        "gmd:postalCode/gco:CharacterString/text()",
+                    ],
+                    multiplicity="0..1",
+                ),
+                ISOElement(
+                    name="country",
+                    search_paths=[
+                        "gmd:country/gco:CharacterString/text()",
+                    ],
+                    multiplicity="0..1",
+                ),
+            ]
+        ),
+        ISOElement(
             name="contact-info",
             search_paths=[
                 "gmd:contactInfo/gmd:CI_Contact",
@@ -236,6 +280,34 @@ class ISOResponsibleParty(ISOElement):
                     search_paths=[
                         "gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString/text()",
                     ],
+                    multiplicity="*",
+                ),
+                ISOElement(
+                    name="fax",
+                    search_paths=[
+                        "gmd:phone/gmd:CI_Telephone/gmd:facsimile/gco:CharacterString/text()",
+                    ],
+                    multiplicity="*",
+                ),
+                ISOElement(
+                    name="telephone",
+                    search_paths=[
+                        "gmd:phone/gmd:CI_Telephone/gmd:voice/gco:CharacterString/text()",
+                    ],
+                    multiplicity="*",
+                ),
+                ISOElement(
+                    name="hours-of-service",
+                    search_paths=[
+                        "gmd:hoursOfService/gco:CharacterString/text()",
+                    ],
+                    multiplicity="0..1",
+                ),
+                ISOElement(
+                    name="contact-instructions",
+                    search_paths=[
+                        "gmd:contactInstructions/gco:CharacterString/text()",
+                    ],
                     multiplicity="0..1",
                 ),
                 ISOResourceLocator(
@@ -245,7 +317,6 @@ class ISOResponsibleParty(ISOElement):
                     ],
                     multiplicity="0..1",
                 ),
-
             ]
         ),
         ISOElement(
@@ -360,6 +431,36 @@ class ISOBoundingBox(ISOElement):
         ),
     ]
 
+
+class ISOBoundingAltitude(ISOElement):
+
+    elements = [
+        ISOElement(
+            name="minimum-altitude",
+            search_paths=[
+                "gmd:minimumValue/gco:Real",
+                "gmd:verticalCRS/gml:VerticalCRS/gml:usesVerticalCS/gml:VerticalCS/gml:axis/gml:CoordinateSystemAxis/gml:minimumValue/text()",
+            ],
+            multiplicity="1",
+        ),
+        ISOElement(
+            name="maximum-altitude",
+            search_paths=[
+                "gmd:maximumValue/gco:Real",
+                "gmd:verticalCRS/gml:VerticalCRS/gml:usesVerticalCS/gml:VerticalCS/gml:axis/gml:CoordinateSystemAxis/gml:maximumValue/text()",
+            ],
+            multiplicity="1",
+        ),
+        ISOElement(
+            name="altitude-units",
+            search_paths=[
+                "gmd:verticalCRS/gml:VerticalCRS/gml:axis/gml:CoordinateSystemAxis/@uom",
+            ],
+            multiplicity="1",
+        ),
+    ]
+
+
 class ISOBrowseGraphic(ISOElement):
 
     elements = [
@@ -405,8 +506,14 @@ class ISOKeyword(ISOElement):
             ],
             multiplicity="0..1",
         ),
-        # If Thesaurus information is needed at some point, this is the
-        # place to add it
+        ISOElement(
+            name="thesaurus-name",
+            search_paths=[
+                "gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString/text()",
+                "gmd:thesaurusName/@xlink:href",
+            ],
+            multiplicity="0..1",
+        ),
    ]
 
 
@@ -467,6 +574,164 @@ class ISOAggregationInfo(ISOElement):
    ]
 
 
+class ISOObliqueLineAzimuth(ISOElement):
+
+    elements = [
+        ISOElement(
+            name="azimuth-angle",
+            search_paths=[
+                "gmd:MD_ObliqueLineAzimuth/gmd:azimuthAngle/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="azimuth-measure-point-longitude",
+            search_paths=[
+                "gmd:MD_ObliqueLineAzimuth/gmd:azimuthMeasurePointLongitude/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+   ]
+
+
+class ISOObliqueLinePoint(ISOElement):
+
+    elements = [
+        ISOElement(
+            name="oblique-line-latitude",
+            search_paths=[
+                "gmd:MD_ObliqueLinePoint/gmd:obliqueLineLatitude/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="oblique-line-longitude",
+            search_paths=[
+                "gmd:MD_ObliqueLinePoint/gmd:obliqueLineLongitude/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+   ]
+
+
+class ISOMapProjection(ISOElement):
+
+    elements = [
+        ISOElement(
+            name="map-projection-name",
+            search_paths=[
+                "gmd:projection/gmd:RS_Identifier/gmd:code/gco:CharacterString/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="standard-parallel",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:standardParellel/gco:real/text()",
+            ],
+            multiplicity="0..*",
+        ),
+        ISOElement(
+            name="longitude-of-central-meridian",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:longitudeOfCentralMeridian/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="latitude-of-projection-origin",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:latitudeOfProjectionOrigin/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="false-easting",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:falseEasting/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="false-northing",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:falseNorthing/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="scale-factor-at-equator",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:scaleFactorAtEquator/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="height-of-perspective-point-above-surface",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:heightOfProspectivePointAboveSurface/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="longitude-of-projection-center",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:longitudeOfProjectionCenter/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="latitude-of-projection-center",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:latitudeOfProjectionCenter/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="scale-factor-at-center-line",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:scaleFactorAtCenterLine/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="straight-vertical-longitude-from-pole",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:straightVerticalLongitudeFromPole/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="scale-factor-at-projection-origin",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:scaleFactorAtProjectionOrigin/gco:real/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="other-projections-definition",
+            search_paths=[
+                "gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gco:CharacterString/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOObliqueLineAzimuth(
+            name="oblique-line-azimuth",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:obliqueLineAzimuthParameter",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOObliqueLinePoint(
+            name="oblique-line-point",
+            search_paths=[
+                "gmd:projectionParameters/gmd:MD_ProjectionParameters/gmd:obliqueLinePointParameter",
+            ],
+            multiplicity="0..*",
+        ),
+   ]
+
+
 class ISODocument(MappedXmlDocument):
 
     # Attribute specifications from "XPaths for GEMINI" by Peter Parslow.
@@ -475,6 +740,116 @@ class ISODocument(MappedXmlDocument):
         ISOElement(
             name="guid",
             search_paths="gmd:fileIdentifier/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="edition",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:edition/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="other-citation-details",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:otherCitationDetails/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="credit",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:credit/gco:CharacterString/text()",
+            multiplicity="*",
+        ),
+        ISOElement(
+            name="completeness-report",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_CompletenessCommission/gmd:evaluationMethodDescription/gco:CharacterString/text()",
+            multiplicity="1",
+        ),
+        ISOElement(
+            name="methodology-type",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:processStep/gmd:LI_ProcessStep/gmd:rationale/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="methodology-description",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:processStep/gmd:LI_ProcessStep/gmd:description/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="lineage-presentation-form",
+            search_paths=[
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
+            ],
+            multiplicity="*",
+        ),
+        ISOElement(
+            name="lineage-title",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:title/gco:CharacterString/text()",
+            multiplicity="1",
+        ),
+        ISOReferenceDate(
+            name="lineage-reference-date",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:date/gmd:CI_Date",
+            multiplicity="1..*",
+        ),
+        ISOElement(
+            name="lineage-edition",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:edition/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOResponsibleParty(
+            name="lineage-responsible-organisation",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty",
+            multiplicity="1..*",
+        ),
+        ISOElement(
+            name="source-scale-denominator",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:scaleDenominator/gmd:MD_RepresentativeFraction/gmd:denominator/gco:Integer/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="type-of-source-media",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:description/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="source-currentness-reference",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:description/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="source-citation-abbreviation",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceCitation/gmd:CI_Citation/gmd:alternateTitle/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="source-contribution",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:description/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="process-description",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:processStep/gmd:LI_ProcessStep/gmd:description/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="process-date",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:processStep/gmd:LI_ProcessStep/gmd:dateTime/gco:DateTime/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="distribution-liability",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="environment-description",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:environmentDescription/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="geographic-description",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:otherCitationDetails/gco:CharacterString/text()",
             multiplicity="0..1",
         ),
         ISOElement(
@@ -565,7 +940,6 @@ class ISODocument(MappedXmlDocument):
                 "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
                 "gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
                 "gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
-
             ],
             multiplicity="*",
         ),
@@ -760,6 +1134,13 @@ class ISODocument(MappedXmlDocument):
             ],
             multiplicity="*",
         ),
+        ISOBoundingAltitude(
+            name="bounding-altitude",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:verticalElement/gmd:EX_VerticalExtent",
+            ],
+            multiplicity="*",
+        ),
         ISOElement(
             name="temporal-extent-begin",
             search_paths=[
@@ -867,6 +1248,13 @@ class ISODocument(MappedXmlDocument):
             ],
             multiplicity="*",
         ),
+        ISOMapProjection(
+            name="map-projection",
+            search_paths=[
+                "gmd:referenceSystemInfo/gmd:MD_CRS",
+            ],
+            multiplicity="*",
+        ),
 
     ]
 
@@ -879,6 +1267,7 @@ class ISODocument(MappedXmlDocument):
         # Todo: Infer resources.
         self.infer_tags(values)
         self.infer_publisher(values)
+        self.infer_originator(values)
         self.infer_contact(values)
         self.infer_contact_email(values)
         return values
@@ -890,6 +1279,13 @@ class ISODocument(MappedXmlDocument):
                 value = date['value']
                 break
         values['date-released'] = value
+
+        lineage_value = ''
+        for date in values['lineage-reference-date']:
+            if date['type'] == 'publication':
+                lineage_value = date['value']
+                break
+        values['lineage-released'] = lineage_value
 
     def infer_date_updated(self, values):
         value = ''
@@ -939,6 +1335,45 @@ class ISODocument(MappedXmlDocument):
                 break
         values['publisher'] = value
 
+        lineage_value = ''
+        for responsible_party in values['lineage-responsible-organisation']:
+            if responsible_party['role'] == 'publisher':
+                lineage_value = responsible_party['organisation-name']
+            if lineage_value:
+                break
+        values['lineage-publisher'] = lineage_value
+
+    def infer_originator(self, values):
+        originator = []
+        online_linkage = []
+        for responsible_party in values['responsible-organisation']:
+            if responsible_party['role'] == 'originator':
+                if responsible_party['individual-name']:
+                    originator.append(responsible_party['individual-name'])
+                if responsible_party['organisation-name']:
+                    originator.append(responsible_party['organisation-name'])
+                linkage_url = ''
+                if responsible_party['contact-info'].get('online-resource'):
+                    linkage_url = responsible_party['contact-info']['online-resource'].get('url', '')
+                online_linkage.append(linkage_url)
+        values['originator'] = originator
+        values['originator-online-linkage'] = online_linkage
+
+        lineage_originator = []
+        lineage_online_linkage = []
+        for responsible_party in values['lineage-responsible-organisation']:
+            if responsible_party['role'] == 'originator':
+                if responsible_party['individual-name']:
+                    lineage_originator.append(responsible_party['individual-name'])
+                if responsible_party['organisation-name']:
+                    lineage_originator.append(responsible_party['organisation-name'])
+                linkage_url = ''
+                if responsible_party['contact-info'].get('online-resource'):
+                    linkage_url = responsible_party['contact-info']['online-resource'].get('url', '')
+                lineage_online_linkage.append(linkage_url)
+        values['lineage-originator'] = lineage_originator
+        values['lineage-originator-online-linkage'] = lineage_online_linkage
+
     def infer_contact(self, values):
         value = ''
         for responsible_party in values['responsible-organisation']:
@@ -956,7 +1391,7 @@ class ISODocument(MappedXmlDocument):
                 value = responsible_party['contact-info']['email']
                 if value:
                     break
-        values['contact-email'] = value
+        values['contact-email'] = ','.join(value)
 
 
 class GeminiDocument(ISODocument):
