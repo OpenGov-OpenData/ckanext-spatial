@@ -753,6 +753,19 @@ class ISODocument(MappedXmlDocument):
             multiplicity="0..1",
         ),
         ISOElement(
+            name="currentness-reference",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gml:TimePeriod/gml:description/text()",
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:description/gco:CharacterString/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="geographic-extent-description",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:otherCitationDetails/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
             name="credit",
             search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:credit/gco:CharacterString/text()",
             multiplicity="*",
@@ -814,7 +827,10 @@ class ISODocument(MappedXmlDocument):
         ),
         ISOElement(
             name="source-currentness-reference",
-            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:description/gco:CharacterString/text()",
+            search_paths=[
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:description/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:description/gco:CharacterString/text()",
+            ],
             multiplicity="0..1",
         ),
         ISOElement(
@@ -944,6 +960,76 @@ class ISODocument(MappedXmlDocument):
             multiplicity="*",
         ),
         ISOElement(
+            name="classsys-presentation-form",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
+                "gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
+                "gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
+            ],
+            multiplicity="*",
+        ),
+        ISOElement(
+            name="classsys-title",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:title/gco:CharacterString/text()",
+            multiplicity="1",
+        ),
+        ISOReferenceDate(
+            name="classsys-reference-date",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:date/gmd:CI_Date",
+            multiplicity="1..*",
+        ),
+        ISOElement(
+            name="classsys-edition",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:edition/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOResponsibleParty(
+            name="classsys-responsible-party",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty",
+            multiplicity="1..*",
+        ),
+        ISOElement(
+            name="idref-presentation-form",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:idref/gmd:RS_Identifier/gmd:authority/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:idref/gmd:RS_Identifier/gmd:authority/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
+                "gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:idref/gmd:RS_Identifier/gmd:authority/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
+                "gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:idref/gmd:RS_Identifier/gmd:authority/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
+            ],
+            multiplicity="*",
+        ),
+        ISOElement(
+            name="idref-title",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:idref/gmd:RS_Identifier/gmd:authority/gmd:CI_Citation/gmd:title/gco:CharacterString/text()",
+            multiplicity="1",
+        ),
+        ISOReferenceDate(
+            name="idref-reference-date",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:idref/gmd:RS_Identifier/gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date",
+            multiplicity="1..*",
+        ),
+        ISOElement(
+            name="idref-edition",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:idref/gmd:RS_Identifier/gmd:authority/gmd:CI_Citation/gmd:edition/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOResponsibleParty(
+            name="idref-responsible-party",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:idref/gmd:RS_Identifier/gmd:authority/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty",
+            multiplicity="1..*",
+        ),
+        ISOResponsibleParty(
+            name="ider-responsible-party",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:obs/gmd:CI_ResponsibleParty",
+            multiplicity="1..*",
+        ),
+        ISOResponsibleParty(
+            name="vouchers-responsible-party",
+            search_paths="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:voucher/gmd:MD_Vouchers/gmd:reposit/gmd:CI_ResponsibleParty",
+            multiplicity="1..*",
+        ),
+        ISOElement(
             name="abstract",
             search_paths=[
                 "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract/gco:CharacterString/text()",
@@ -967,6 +1053,13 @@ class ISODocument(MappedXmlDocument):
                 "gmd:contact/gmd:CI_ResponsibleParty",
             ],
             multiplicity="1..*",
+        ),
+        ISOResponsibleParty(
+            name="metadata-contact",
+            search_paths=[
+                "gmd:contact/gmd:CI_ResponsibleParty",
+            ],
+            multiplicity="*",
         ),
         ISOElement(
             name="frequency-of-update",
@@ -1162,6 +1255,41 @@ class ISODocument(MappedXmlDocument):
             multiplicity="*",
         ),
         ISOElement(
+            name="lineage-temporal-extent-begin",
+            search_paths=[
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:beginPosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml32:TimePeriod/gml32:beginPosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:beginPosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml32:TimePeriod/gml32:beginPosition/text()",
+            ],
+            multiplicity="*",
+        ),
+        ISOElement(
+            name="lineage-temporal-extent-end",
+            search_paths=[
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:endPosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml32:TimePeriod/gml32:endPosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:endPosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml32:TimePeriod/gml32:endPosition/text()",
+            ],
+            multiplicity="*",
+        ),
+        ISOElement(
+            name="lineage-temporal-calendar-date",
+            search_paths=[
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml:TimeInstant/gml:timePosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml32:TimeInstant/gml32:timePosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml:TimeInstant/gml:timePosition/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:sourceExtent/gmd:EX_Extent/gmd:temporalExtent/gmd:EX_TemporalExtent/gmd:extent/gml32:TimeInstant/gml32:timePosition/text()",
+            ],
+            multiplicity="*",
+        ),
+        ISOElement(
+            name="available-datetime",
+            search_paths="gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributionOrderProcess/gmd:MD_StandardOrderProcess/gmd:plannedAvailableDateTime/gco:DateTime/text()",
+            multiplicity="0..1",
+        ),
+        ISOElement(
             name="vertical-extent",
             search_paths=[
                 "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:verticalElement/gmd:EX_VerticalExtent",
@@ -1287,6 +1415,20 @@ class ISODocument(MappedXmlDocument):
                 break
         values['lineage-released'] = lineage_value
 
+        classsys_value = ''
+        for date in values['classsys-reference-date']:
+            if date['type'] == 'publication':
+                classsys_value = date['value']
+                break
+        values['classsys-released'] = classsys_value
+
+        idref_value = ''
+        for date in values['idref-reference-date']:
+            if date['type'] == 'creation':
+                idref_value = date['value']
+                break
+        values['idref-released'] = idref_value
+
     def infer_date_updated(self, values):
         value = ''
         dates = []
@@ -1343,6 +1485,22 @@ class ISODocument(MappedXmlDocument):
                 break
         values['lineage-publisher'] = lineage_value
 
+        classsys_value = ''
+        for responsible_party in values['classsys-responsible-party']:
+            if responsible_party['role'] == 'publisher':
+                classsys_value = responsible_party['organisation-name']
+            if classsys_value:
+                break
+        values['classsys-publisher'] = classsys_value
+
+        idref_value = ''
+        for responsible_party in values['idref-responsible-party']:
+            if responsible_party['role'] == 'publisher':
+                idref_value = responsible_party['organisation-name']
+            if idref_value:
+                break
+        values['idref-publisher'] = idref_value
+
     def infer_originator(self, values):
         originator = []
         online_linkage = []
@@ -1373,6 +1531,36 @@ class ISODocument(MappedXmlDocument):
                 lineage_online_linkage.append(linkage_url)
         values['lineage-originator'] = lineage_originator
         values['lineage-originator-online-linkage'] = lineage_online_linkage
+
+        classsys_originator = []
+        classsys_online_linkage = []
+        for responsible_party in values['classsys-responsible-party']:
+            if responsible_party['role'] == 'originator':
+                if responsible_party['individual-name']:
+                    classsys_originator.append(responsible_party['individual-name'])
+                if responsible_party['organisation-name']:
+                    classsys_originator.append(responsible_party['organisation-name'])
+                linkage_url = ''
+                if responsible_party['contact-info'].get('online-resource'):
+                    linkage_url = responsible_party['contact-info']['online-resource'].get('url', '')
+                classsys_online_linkage.append(linkage_url)
+        values['classsys-originator'] = classsys_originator
+        values['classsys-originator-online-linkage'] = classsys_online_linkage
+
+        idref_originator = []
+        idref_online_linkage = []
+        for responsible_party in values['idref-responsible-party']:
+            if responsible_party['role'] in ['originator','author']:
+                if responsible_party['individual-name']:
+                    idref_originator.append(responsible_party['individual-name'])
+                if responsible_party['organisation-name']:
+                    idref_originator.append(responsible_party['organisation-name'])
+                linkage_url = ''
+                if responsible_party['contact-info'].get('online-resource'):
+                    linkage_url = responsible_party['contact-info']['online-resource'].get('url', '')
+                idref_online_linkage.append(linkage_url)
+        values['idref-originator'] = idref_originator
+        values['idref-originator-online-linkage'] = idref_online_linkage
 
     def infer_contact(self, values):
         value = ''
