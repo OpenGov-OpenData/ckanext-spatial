@@ -960,6 +960,34 @@ class ISODocument(MappedXmlDocument):
             multiplicity="*",
         ),
         ISOElement(
+            name="geologic-presentation-form",
+            search_paths=[
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_TemporalValidity/gmd:measureIdentification/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_TemporalValidity/gmd:measureIdentification/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/@codeListValue",
+            ],
+            multiplicity="*",
+        ),
+        ISOElement(
+            name="geologic-title",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_TemporalValidity/gmd:measureIdentification/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:title/gco:CharacterString/text()",
+            multiplicity="1",
+        ),
+        ISOReferenceDate(
+            name="geologic-reference-date",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_TemporalValidity/gmd:measureIdentification/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date",
+            multiplicity="1..*",
+        ),
+        ISOElement(
+            name="geologic-edition",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_TemporalValidity/gmd:measureIdentification/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:edition/gco:CharacterString/text()",
+            multiplicity="0..1",
+        ),
+        ISOResponsibleParty(
+            name="geologic-responsible-party",
+            search_paths="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_TemporalValidity/gmd:measureIdentification/gmd:MD_Identifier/gmd:authority/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty",
+            multiplicity="1..*",
+        ),
+        ISOElement(
             name="classsys-presentation-form",
             search_paths=[
                 "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:taxonomy/gmd:MD_TaxonSys/gmd:classSys/gmd:CI_Citation/gmd:presentationForm/gmd:CI_PresentationFormCode/text()",
@@ -1368,6 +1396,62 @@ class ISODocument(MappedXmlDocument):
             ],
             multiplicity="0..1",
         ),
+        ISOElement(
+            name="geologic-time-scale",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimeInstant/gml:name/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="geologic-age-estimate",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimeInstant/gml:timePosition/calendarEraName",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="beginning-geologic-time-scale",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:begin/gml:TimeInstant/gml:name/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="beginning-geologic-age-estimate",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:begin/gml:TimeInstant/gml:timePosition/calendarEraName",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="ending-geologic-time-scale",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:end/gml:TimeInstant/gml:name/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="ending-geologic-age-estimate",
+            search_paths=[
+                "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:end/gml:TimeInstant/gml:timePosition/calendarEraName",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="geologic-age-uncertainty",
+            search_paths=[
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_TemporalValidity/gmd:result/gmd:DQ_QuantitativeResult/gmd:value/gco:Record/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        ISOElement(
+            name="geologic-age-explanation",
+            search_paths=[
+                "gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:report/gmd:DQ_TemporalValidity/gmd:evaluationMethodDescription/gco:CharacterString/text()",
+            ],
+            multiplicity="0..1",
+        ),
         ISOBrowseGraphic(
             name="browse-graphic",
             search_paths=[
@@ -1414,6 +1498,13 @@ class ISODocument(MappedXmlDocument):
                 lineage_value = date['value']
                 break
         values['lineage-released'] = lineage_value
+
+        geologic_value = ''
+        for date in values['geologic-reference-date']:
+            if date['type'] == 'publication':
+                geologic_value = date['value']
+                break
+        values['geologic-released'] = geologic_value
 
         classsys_value = ''
         for date in values['classsys-reference-date']:
@@ -1485,6 +1576,14 @@ class ISODocument(MappedXmlDocument):
                 break
         values['lineage-publisher'] = lineage_value
 
+        geologic_value = ''
+        for responsible_party in values['geologic-responsible-party']:
+            if responsible_party['role'] == 'publisher':
+                geologic_value = responsible_party['organisation-name']
+            if geologic_value:
+                break
+        values['geologic-publisher'] = geologic_value
+
         classsys_value = ''
         for responsible_party in values['classsys-responsible-party']:
             if responsible_party['role'] == 'publisher':
@@ -1531,6 +1630,21 @@ class ISODocument(MappedXmlDocument):
                 lineage_online_linkage.append(linkage_url)
         values['lineage-originator'] = lineage_originator
         values['lineage-originator-online-linkage'] = lineage_online_linkage
+
+        geologic_originator = []
+        geologic_online_linkage = []
+        for responsible_party in values['geologic-responsible-party']:
+            if responsible_party['role'] == 'originator':
+                if responsible_party['individual-name']:
+                    geologic_originator.append(responsible_party['individual-name'])
+                if responsible_party['organisation-name']:
+                    geologic_originator.append(responsible_party['organisation-name'])
+                linkage_url = ''
+                if responsible_party['contact-info'].get('online-resource'):
+                    linkage_url = responsible_party['contact-info']['online-resource'].get('url', '')
+                geologic_online_linkage.append(linkage_url)
+        values['geologic-originator'] = geologic_originator
+        values['geologic-originator-online-linkage'] = geologic_online_linkage
 
         classsys_originator = []
         classsys_online_linkage = []
