@@ -743,6 +743,11 @@ class FGDCDocument(MappedXmlDocument):
             multiplicity="0..1",
         ),
         FGDCElement(
+            name="credit",
+            search_paths="idinfo/datacred/text()",
+            multiplicity="0..1",
+        ),
+        FGDCElement(
             name="completeness-report",
             search_paths="dataqual/complete/text()",
             multiplicity="0..1",
