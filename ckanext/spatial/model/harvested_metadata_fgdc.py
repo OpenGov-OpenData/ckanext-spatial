@@ -810,6 +810,11 @@ class FGDCDocument(MappedXmlDocument):
             search_paths="dataqual/lineage/procstep/procdate/text()",
             multiplicity="0..1",
         ),
+        FGDCElement(
+            name="map-projection-name",
+            search_paths="spref/horizsys/planar/mapproj/mapprojn/text()",
+            multiplicity="0..1",
+        ),
         FGDCPlanarCoordinateInformation(
             name="planar-coordinate-information",
             search_paths="spref/horizsys/planar/planci",
