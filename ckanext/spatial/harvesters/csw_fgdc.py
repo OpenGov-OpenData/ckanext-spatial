@@ -556,7 +556,6 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
             'guid',
             # Usefuls
             'metadata-date',  # Released
-            'contact-email',
         ]:
             extras[name] = fgdc_values[name]
 
@@ -574,10 +573,6 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
 
         if len(fgdc_values['bbox']) > 0:
             bbox = fgdc_values['bbox'][0]
-            extras['bbox-east-long'] = bbox['east']
-            extras['bbox-north-lat'] = bbox['north']
-            extras['bbox-south-lat'] = bbox['south']
-            extras['bbox-west-long'] = bbox['west']
 
             try:
                 xmin = float(bbox['west'])
