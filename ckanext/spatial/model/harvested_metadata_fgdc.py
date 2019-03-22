@@ -556,6 +556,11 @@ class FGDCAttribute(FGDCElement):
             search_paths="attrdef/text()",
             multiplicity="0..1",
         ),
+        FGDCElement(
+            name="attribute-definition-source",
+            search_paths="attrdefs/text()",
+            multiplicity="0..1",
+        ),
     ]
 
 
@@ -718,13 +723,18 @@ class FGDCDocument(MappedXmlDocument):
             multiplicity="0..1",
         ),
         FGDCContactInfo(
+            name="ider-contact",
+            search_paths="idinfo/taxonomy/taxonsys/ider/cntinfo",
+            multiplicity="0..1",
+        ),
+        FGDCContactInfo(
             name="vouchers-contact",
             search_paths="idinfo/taxonomy/taxonsys/vouchers/reposit/cntinfo",
             multiplicity="0..1",
         ),
-        FGDCContactInfo(
-            name="ider-contact",
-            search_paths="idinfo/taxonomy/taxonsys/ider/cntinfo",
+        FGDCElement(
+            name="vouchers-specimen",
+            search_paths="idinfo/taxonomy/taxonsys/vouchers/specimen/text()",
             multiplicity="0..1",
         ),
         FGDCElement(
@@ -745,6 +755,16 @@ class FGDCDocument(MappedXmlDocument):
         FGDCElement(
             name="credit",
             search_paths="idinfo/datacred/text()",
+            multiplicity="0..1",
+        ),
+        FGDCElement(
+            name="native-dataset-environment",
+            search_paths="idinfo/native/text()",
+            multiplicity="0..1",
+        ),
+        FGDCElement(
+            name="attribute-accuracy-report",
+            search_paths="dataqual/attracc/attraccr/text()",
             multiplicity="0..1",
         ),
         FGDCElement(
@@ -855,6 +875,11 @@ class FGDCDocument(MappedXmlDocument):
             search_paths="metainfo/metc/cntinfo",
             multiplicity="0..1",
         ),
+        FGDCElement(
+            name="metadata-standard-name",
+            search_paths="metainfo/metstdn/text()",
+            multiplicity="0..1",
+        ),
         FGDCSingleDates(
             name="available-single-dates",
             search_paths=[
@@ -908,7 +933,7 @@ class FGDCDocument(MappedXmlDocument):
             if item not in temporal_keywords:
                 temporal_keywords.append(item)
 
-        for item in values.get('tax-keyword', []):
+        for item in values.get('taxon-keyword', []):
             if item not in tags:
                 tags.append(item)
 
