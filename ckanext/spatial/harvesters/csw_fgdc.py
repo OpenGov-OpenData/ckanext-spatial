@@ -486,7 +486,9 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
         :returns: A dataset dictionary (package_dict)
         :rtype: dict
         '''
-        
+
+        log = logging.getLogger(__name__ + '.import')
+
         tags = []
 
         if 'tags' in fgdc_values:
@@ -510,7 +512,7 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
                     group = p.toolkit.get_action('group_show')(context, {'id': group_id})
                     groups.append({'id': group['id'], 'name': group['name']})
                 except p.toolkit.ObjectNotFound, e:
-                    logging.error('Default group %s not found, proceeding without.' % group_id)
+                    log.error('Default group %s not found, proceeding without.' % group_id)
 
         package_dict = {
             'title': fgdc_values['title'],
@@ -602,27 +604,27 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
         else:
             log.debug('No spatial extent defined for this object')
 
+        entity_types = fgdc_values.get('entity-type', [])
         resource_locators = fgdc_values.get('resource-locator', [])
 
         if len(resource_locators):
-            for resource_locator in resource_locators:
+            for index, resource_locator in enumerate(resource_locators):
+                entity_type = entity_types[index]
+                res_name = entity_type.get('entity-type-label')
                 url = resource_locator.get('url', '').strip()
                 if url:
                     resource = {}
-                    resource['format'] = guess_resource_format(url)
-                    if resource['format'] == 'wms' and config.get('ckanext.spatial.harvest.validate_wms', False):
-                        # Check if the service is a view service
-                        test_url = url.split('?')[0] if '?' in url else url
-                        if self._is_wms(test_url):
-                            resource['verified'] = True
-                            resource['verified_date'] = datetime.now().isoformat()
+                    res_format = guess_resource_format(url)
+                    if not res_format:
+                        res_format = guess_resource_format(res_name)
+                    resource['format'] = res_format
 
-                    resource.update(
-                        {
-                            'url': url,
-                            'name': resource_locator.get('name') or p.toolkit._('Unnamed resource'),
-                            'description': resource_locator.get('description') or  '',
-                        })
+                    resource.update({
+                        'url': url,
+                        'name': res_name or p.toolkit._('Unnamed resource'),
+                        'description': entity_type.get('entity-type-definition') or  '',
+                        'url_type': 'xloader',
+                    })
                     package_dict['resources'].append(resource)
 
 

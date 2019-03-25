@@ -1,4 +1,6 @@
+import re
 from lxml import etree
+from ckanext.harvest.harvesters.base import munge_tag
 
 import logging
 log = logging.getLogger(__name__)
@@ -159,6 +161,32 @@ class FGDCElement(MappedXmlElement):
     }
 
 
+class FGDCEntityType(FGDCElement):
+    elements = [
+        FGDCElement(
+            name="entity-type-label",
+            search_paths=[
+                "enttypl/text()",
+            ],
+            multiplicity="1",
+        ),
+        FGDCElement(
+            name="entity-type-definition",
+            search_paths=[
+                "enttypd/text()",
+            ],
+            multiplicity="0..1",
+        ),
+        FGDCElement(
+            name="entity-type-definition-source",
+            search_paths=[
+                "enttypds/text()",
+            ],
+            multiplicity="0..1",
+        ),
+    ]
+
+
 class FGDCResourceLocator(FGDCElement):
     elements = [
         FGDCElement(
@@ -169,14 +197,14 @@ class FGDCResourceLocator(FGDCElement):
             multiplicity="1",
         ),
         FGDCElement(
-            name="name",
+            name="format-name",
             search_paths=[
                 "digtinfo/formname/text()",
             ],
             multiplicity="0..1",
         ),
         FGDCElement(
-            name="description",
+            name="format-info-content",
             search_paths=[
                 "digtinfo/formcont/text()",
             ],
@@ -601,6 +629,11 @@ class FGDCDocument(MappedXmlDocument):
             search_paths="idinfo/citation/citeinfo/title/text()",
             multiplicity="0..1",
         ),
+        FGDCEntityType(
+            name="entity-type",
+            search_paths="eainfo/detailed/enttyp",
+            multiplicity="*",
+        ),
         FGDCResourceLocator(
             name="resource-locator",
             search_paths="distinfo/stdorder/digform",
@@ -912,30 +945,41 @@ class FGDCDocument(MappedXmlDocument):
 
         if len(values.get('keywords', [])):
             key = values['keywords'][0]
-        for item in key.get('theme-keyword', []):
-            if item not in tags:
-                tags.append(item)
-            if item not in theme_keywords:
-                theme_keywords.append(item)
-        for item in key.get('place-keyword', []):
-            if item not in tags:
-                tags.append(item)
-            if item not in place_keywords:
-                place_keywords.append(item)
-        for item in key.get('stratum-keyword', []):
-            if item not in tags:
-                tags.append(item)
-            if item not in stratum_keywords:
-                stratum_keywords.append(item)
-        for item in key.get('temporal-keyword', []):
-            if item not in tags:
-                tags.append(item)
-            if item not in temporal_keywords:
-                temporal_keywords.append(item)
 
-        for item in values.get('taxon-keyword', []):
-            if item not in tags:
-                tags.append(item)
+        for theme in key.get('theme-keyword', []):
+            if re.match('^[\w .-]+$', theme) is None:
+                theme = munge_tag(theme)
+            if theme not in tags:
+                tags.append(theme)
+            if theme not in theme_keywords:
+                theme_keywords.append(theme)
+        for place in key.get('place-keyword', []):
+            if re.match('^[\w .-]+$', place) is None:
+                place = munge_tag(place)
+            if place not in tags:
+                tags.append(place)
+            if place not in place_keywords:
+                place_keywords.append(place)
+        for stratum in key.get('stratum-keyword', []):
+            if re.match('^[\w .-]+$', stratum) is None:
+                stratum = munge_tag(stratum)
+            if stratum not in tags:
+                tags.append(stratum)
+            if stratum not in stratum_keywords:
+                stratum_keywords.append(stratum)
+        for temporal in key.get('temporal-keyword', []):
+            if re.match('^[\w .-]+$', temporal) is None:
+                temporal = munge_tag(temporal)
+            if temporal not in tags:
+                tags.append(temporal)
+            if temporal not in temporal_keywords:
+                temporal_keywords.append(temporal)
+
+        for taxon in values.get('taxon-keyword', []):
+            if re.match('^[\w .-]+$', taxon) is None:
+                taxon = munge_tag(taxon)
+            if tag not in tags:
+                tags.append(taxon)
 
         values['tags'] = tags
         values['theme-keywords'] = theme_keywords
@@ -982,13 +1026,15 @@ class FGDCDocument(MappedXmlDocument):
         value = ''
         dates = []
 
-        citation_date = values.get('idinfo-citation').get('pubdate')
-        if citation_date and citation_date != 'N/A':
-            dates.append(citation_date)
+        if len(values.get('idinfo-citation', [])):
+            citation_date = values['idinfo-citation'].get('pubdate')
+            if citation_date and citation_date != 'N/A':
+                dates.append(citation_date)
 
-        enddate = values.get('idinfo-range-of-dates').get('enddate')
-        if enddate and enddate != 'N/A':
-            dates.append(enddate)
+        if len(values.get('idinfo-range-of-dates', [])):
+            enddate = values['idinfo-range-of-dates'].get('enddate')
+            if enddate and enddate != 'N/A':
+                dates.append(enddate)
 
         if values['metd'] and values['metd'] != 'N/A':
             dates.append(values['metd'])
