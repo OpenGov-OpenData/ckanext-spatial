@@ -161,28 +161,53 @@ class FGDCElement(MappedXmlElement):
     }
 
 
-class FGDCEntityType(FGDCElement):
+class FGDCAttribute(FGDCElement):
+    elements = [
+        FGDCElement(
+            name="attribute-label",
+            search_paths="attrlabl/text()",
+            multiplicity="0..1",
+        ),
+        FGDCElement(
+            name="attribute-definition",
+            search_paths="attrdef/text()",
+            multiplicity="0..1",
+        ),
+        FGDCElement(
+            name="attribute-definition-source",
+            search_paths="attrdefs/text()",
+            multiplicity="0..1",
+        ),
+    ]
+
+
+class FGDCEntityAndAttribute(FGDCElement):
     elements = [
         FGDCElement(
             name="entity-type-label",
             search_paths=[
-                "enttypl/text()",
+                "enttyp/enttypl/text()",
             ],
             multiplicity="1",
         ),
         FGDCElement(
             name="entity-type-definition",
             search_paths=[
-                "enttypd/text()",
+                "enttyp/enttypd/text()",
             ],
             multiplicity="0..1",
         ),
         FGDCElement(
             name="entity-type-definition-source",
             search_paths=[
-                "enttypds/text()",
+                "enttyp/enttypds/text()",
             ],
             multiplicity="0..1",
+        ),
+        FGDCAttribute(
+            name="attribute",
+            search_paths="attr",
+            multiplicity="*",
         ),
     ]
 
@@ -382,7 +407,7 @@ class FGDCCitation(FGDCElement):
         FGDCElement(
             name="onlink",
             search_paths="onlink/text()",
-            multiplicity="0..1",
+            multiplicity="*",
         ),
    ]
 
@@ -572,26 +597,6 @@ class FGDCGeologicAge(FGDCElement):
     ]
 
 
-class FGDCAttribute(FGDCElement):
-    elements = [
-        FGDCElement(
-            name="attribute-label",
-            search_paths="attrlabl/text()",
-            multiplicity="0..1",
-        ),
-        FGDCElement(
-            name="attribute-definition",
-            search_paths="attrdef/text()",
-            multiplicity="0..1",
-        ),
-        FGDCElement(
-            name="attribute-definition-source",
-            search_paths="attrdefs/text()",
-            multiplicity="0..1",
-        ),
-    ]
-
-
 class FGDCPlanarCoordinateInformation(FGDCElement):
     elements = [
         FGDCElement(
@@ -629,9 +634,9 @@ class FGDCDocument(MappedXmlDocument):
             search_paths="idinfo/citation/citeinfo/title/text()",
             multiplicity="0..1",
         ),
-        FGDCEntityType(
-            name="entity-type",
-            search_paths="eainfo/detailed/enttyp",
+        FGDCEntityAndAttribute(
+            name="entity-and-attribute",
+            search_paths="eainfo/detailed",
             multiplicity="*",
         ),
         FGDCResourceLocator(
@@ -882,11 +887,6 @@ class FGDCDocument(MappedXmlDocument):
             name="horizontal-datum-name",
             search_paths="spref/horizsys/geodatic/horizdn/text()",
             multiplicity="0..1",
-        ),
-        FGDCAttribute(
-            name="attribute",
-            search_paths="eainfo/detailed/attr",
-            multiplicity="*",
         ),
         FGDCContactInfo(
             name="distributor",

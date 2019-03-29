@@ -604,15 +604,20 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
         else:
             log.debug('No spatial extent defined for this object')
 
-        entity_types = fgdc_values.get('entity-type', [])
+        ea_list = fgdc_values.get('entity-and-attribute', [])
         resource_locators = fgdc_values.get('resource-locator', [])
 
         if len(resource_locators):
             for index, resource_locator in enumerate(resource_locators):
-                entity_type = entity_types[index]
-                res_name = entity_type.get('entity-type-label')
                 url = resource_locator.get('url', '').strip()
                 if url:
+                    res_name = p.toolkit._('Unnamed resource')
+                    res_description = ''
+                    if index <= len(ea_list):
+                        ea_info = ea_list[index]
+                        res_name = ea_info.get('entity-type-label')
+                        res_description = ea_info.get('entity-type-definition')
+
                     resource = {}
                     res_format = guess_resource_format(url)
                     if not res_format:
@@ -621,8 +626,8 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
 
                     resource.update({
                         'url': url,
-                        'name': res_name or p.toolkit._('Unnamed resource'),
-                        'description': entity_type.get('entity-type-definition') or  '',
+                        'name': res_name,
+                        'description': res_description,
                         'url_type': 'xloader',
                     })
                     package_dict['resources'].append(resource)
