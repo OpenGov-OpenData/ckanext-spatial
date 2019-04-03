@@ -611,9 +611,9 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
             for index, resource_locator in enumerate(resource_locators):
                 url = resource_locator.get('url', '').strip()
                 if url:
-                    res_name = p.toolkit._('Unnamed resource')
-                    res_description = ''
-                    if index <= len(ea_list):
+                    res_name = resource_locator.get('format-name', 'Unnamed resource')
+                    res_description = resource_locator.get('format-info-content', '')
+                    if len(ea_list) > 0 and index < len(ea_list):
                         ea_info = ea_list[index]
                         res_name = ea_info.get('entity-type-label')
                         res_description = ea_info.get('entity-type-definition')
