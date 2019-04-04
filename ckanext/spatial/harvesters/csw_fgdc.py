@@ -6,14 +6,17 @@ import uuid
 import hashlib
 import dateutil
 import mimetypes
-
 import logging
+
+from pylons import config
 
 from ckan import plugins as p
 from ckan import model
 from ckan import logic
 from ckan.lib.helpers import json
 from ckan.lib.navl.validators import not_empty
+from ckan.lib.search.index import PackageSearchIndex
+from ckanext.harvest.harvesters.base import munge_tag
 
 from ckan.plugins.core import SingletonPlugin, implements
 
