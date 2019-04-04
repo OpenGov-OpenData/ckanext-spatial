@@ -956,30 +956,18 @@ class FGDCDocument(MappedXmlDocument):
         for place in key.get('place-keyword', []):
             if re.match('^[\w .-]+$', place) is None:
                 place = munge_tag(place)
-            if place not in tags:
-                tags.append(place)
             if place not in place_keywords:
                 place_keywords.append(place)
         for stratum in key.get('stratum-keyword', []):
             if re.match('^[\w .-]+$', stratum) is None:
                 stratum = munge_tag(stratum)
-            if stratum not in tags:
-                tags.append(stratum)
             if stratum not in stratum_keywords:
                 stratum_keywords.append(stratum)
         for temporal in key.get('temporal-keyword', []):
             if re.match('^[\w .-]+$', temporal) is None:
                 temporal = munge_tag(temporal)
-            if temporal not in tags:
-                tags.append(temporal)
             if temporal not in temporal_keywords:
                 temporal_keywords.append(temporal)
-
-        for taxon in values.get('taxon-keyword', []):
-            if re.match('^[\w .-]+$', taxon) is None:
-                taxon = munge_tag(taxon)
-            if tag not in tags:
-                tags.append(taxon)
 
         values['tags'] = tags
         values['theme-keywords'] = theme_keywords
