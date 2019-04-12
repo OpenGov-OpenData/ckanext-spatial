@@ -296,7 +296,6 @@ class CSWFGDCHarvester(SpatialHarvester, SingletonPlugin):
         try:
             fgdc_parser = FGDCDocument(harvest_object.content)
             fgdc_values = fgdc_parser.read_values()
-            log.debug(fgdc_values)
         except Exception, e:
             self._save_object_error('Error parsing FGDC document for object {0}: {1}'.format(harvest_object.id, str(e)),
                                     harvest_object, 'Import')
