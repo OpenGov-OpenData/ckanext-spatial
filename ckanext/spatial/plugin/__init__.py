@@ -3,16 +3,9 @@ from logging import getLogger
 
 import geojson
 
-try:
-    from shapely.errors import GeometryTypeError
-except ImportError:
-    # Previous version of shapely uses ValueError and TypeError
-    GeometryTypeError = (ValueError, TypeError)
-
 import ckantoolkit as tk
 
 from ckan import plugins as p
-from ckan.common import aslist
 from ckan.lib.search import SearchError
 
 
@@ -158,10 +151,10 @@ class SpatialQuery(SpatialQueryMixin, p.SingletonPlugin):
         elif search_backend == "solr-spatial-field":
             qp = "field"
         if qp:
-            solr_allowed_query_parsers = aslist(config.get("ckan.search.solr_allowed_query_parsers"))
-            if qp not in solr_allowed_query_parsers:
-                solr_allowed_query_parsers.append(qp)
-            config["ckan.search.solr_allowed_query_parsers"] = solr_allowed_query_parsers
+            allowed_query_parsers = tk.aslist(config.get("ckan.search.solr_allowed_query_parsers", []))
+            if qp not in allowed_query_parsers:
+                allowed_query_parsers.append(qp)
+                config["ckan.search.solr_allowed_query_parsers"] = ' '.join(allowed_query_parsers)
 
     # IPackageController
 
