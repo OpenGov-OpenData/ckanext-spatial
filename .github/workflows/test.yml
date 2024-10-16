@@ -98,4 +98,16 @@ jobs:
         sed -i -e 's/use = config:.*/use = config:\/srv\/app\/src\/ckan\/test-core.ini/' test.ini
 
     - name: Run tests
-      run: pytest --ckan-ini=test.ini --cov=ckanext.spatial --cov-report term-missing --cov-append --disable-warnings ckanext/spatial/tests
+      run: pytest --ckan-ini=test.ini --cov=ckanext.spatial --cov-report term-missing --cov-report xml:coverage.xml --cov-append --disable-warnings ckanext/spatial/tests
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      with:
+        args: >
+          -Dsonar.projectKey=ckanext-spatial
+          -Dsonar.sources=ckanext/spatial
+          -Dsonar.tests=ckanext/spatial/tests
+          -Dsonar.exclusions=ckanext/spatial/tests/**
+          -Dsonar.python.coverage.reportPaths=coverage.xml
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_API_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_EXTERNAL_URL }}
