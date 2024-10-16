@@ -103,7 +103,7 @@ jobs:
       uses: sonarsource/sonarqube-scan-action@master
       with:
         args: >
-          -Dsonar.projectKey=ckanext-cloudstorage
+          -Dsonar.projectKey=ckanext-spatial
           -Dsonar.sources=ckanext/spatial
           -Dsonar.tests=ckanext/spatial/tests
           -Dsonar.python.coverage.reportPaths=coverage.xml
