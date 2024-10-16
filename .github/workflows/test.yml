@@ -106,6 +106,7 @@ jobs:
           -Dsonar.projectKey=ckanext-spatial
           -Dsonar.sources=ckanext/spatial
           -Dsonar.tests=ckanext/spatial/tests
+          -Dsonar.exclusions=ckanext/spatial/tests/**
           -Dsonar.python.coverage.reportPaths=coverage.xml
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_API_TOKEN }}
