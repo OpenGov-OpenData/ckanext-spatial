@@ -1,0 +1,1241 @@
+<metadata xmlns:csw="http://www.opengis.net/cat/csw/2.0.2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Sadro, Steve</origin>
+        <pubdate>2018-08-16</pubdate>
+        <pubtime>N/A</pubtime>
+        <title>Climate sensitivity of Sierra Nevada Lakes</title>
+        <edition>N/A</edition>
+        <geoform>tabular digital data</geoform>
+        <pubinfo>
+          <pubplace>N/A</pubplace>
+          <publish>N/A</publish>
+        </pubinfo>
+        <othercit> Email address:ssadro@ucdavis.edu</othercit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>
+  We analyzed the thermal response in the upper mixed layer of a lake in
+  the Sierra Nevada of California to interannual variation in air
+  temperature, snow deposition, and other climate factors to
+  characterize relative effects on water temperature. We then use summer
+  temperature data from 19 lakes to understand how the relative
+  importance of snow and other factors governing lake temperature vary
+  at broad spatial scales and predict sensitivity to warming in over
+  1600 lakes across the region. Our study has three specific objectives:
+  1) to characterize how water temperatures in mountain lakes are
+  responding to variation in air temperature, snow deposition, and other
+  climate factors; 2) to evaluate scaling relationships for water
+  temperature using landscape and lake morphometric attributes; and 3)
+  using those scaling relationships, to identify lakes that are most
+  sensitive to warming from ongoing changes in climate. Our results
+  emphasize the high rate of climate warming taking place in mountain
+  ecosystems, and demonstrate the substantial role of snowpack in
+  governing lake temperature. We illustrate the extent to which warming
+  within lakes scales with elevation and lake morphometric attributes,
+  and use those empirical relationships to identify lakes most sensitive
+  to ongoing changes in climate.
+</abstract>
+      <purpose>N/A</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>1983</begdate>
+          <enddate>2015</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>as it was at time of compilation</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>ongoing</update>
+    </status>
+    <spdom>
+      <descgeog>Emerald Lake, a long term study lake located in the southern Sierra Nevada and 18 other lakes scattered northward to Donner Pass</descgeog>
+      <bounding>
+        <westbc>-118.675872</westbc>
+        <eastbc>-118.675872</eastbc>
+        <northbc>36.597491</northbc>
+        <southbc>36.597491</southbc>
+        <boundalt/>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>N/A</themekt>
+        <themekey>climate change</themekey>
+      </theme>
+      <theme>
+        <themekt>N/A</themekt>
+        <themekey>air temperature</themekey>
+      </theme>
+      <theme>
+        <themekt>N/A</themekt>
+        <themekey>lake temperature</themekey>
+      </theme>
+      <theme>
+        <themekt>N/A</themekt>
+        <themekey>mountain lakes</themekey>
+      </theme>
+      <theme>
+        <themekt>N/A</themekt>
+        <themekey>drought, snow </themekey>
+      </theme>
+      <theme>
+        <themekt>N/A</themekt>
+        <themekey>snowmelt</themekey>
+      </theme>
+      <theme>
+        <themekt>N/A</themekt>
+        <themekey>cross scale interactions</themekey>
+      </theme>
+    </keywords>
+    <accconst>Allow  all to users: uid=EDI,o=EDI,dc=edirepository,dc=org
+					Allow  all to users: uid=acohen,o=EDI,dc=edirepository,dc=org
+					Allow  read to users: public
+					</accconst>
+    <useconst>
+  This information is released under the Creative Commons license -
+  Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/).
+  The consumer of these data ("Data User" herein) is required
+  to cite it appropriately in any publication that results from its use.
+  The Data User should realize that these data may be actively used by
+  others for ongoing research and that coordination may be necessary to
+  prevent duplicate publication. The Data User is urged to contact the
+  authors of these data if any questions about methodology or results
+  occur. Where appropriate, the Data User is encouraged to consider
+  collaboration or co-authorship with the authors. The Data User should
+  realize that misinterpretation of data may occur if used out of
+  context of the original study. While substantial efforts are made to
+  ensure the accuracy of data and associated documentation, complete
+  accuracy of data sets cannot be guaranteed. All data are made
+  available "as is." The Data User should be aware, however,
+  that data are updated periodically and it is the responsibility of the
+  Data User to check for new versions of the data. The data authors and
+  the repository where these data were obtained shall not be liable for
+  damages resulting from any use or misinterpretation of the data. Thank
+  you.
+</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Sadro, Steve</cntper>
+          <cntorg>University of California Davis</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>Mailing</addrtype>
+          <city>N/A</city>
+          <state>N/A</state>
+          <postal>N/A</postal>
+        </cntaddr>
+        <cntvoice>N/A</cntvoice>
+        <cntemail>ssadro@ucdavis.edu</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <browse>
+      <browsen>N/A</browsen>
+      <browsed>N/A</browsed>
+      <browset>N/A</browset>
+    </browse>
+    <secinfo>
+      <secsys>N/A</secsys>
+      <secclass>N/A</secclass>
+      <sechandl>N/A</sechandl>
+    </secinfo>
+    <native/>
+  </idinfo>
+  <dataqual>
+    <logic>Not Applicable</logic>
+    <complete/>
+    <lineage>
+      <method>
+        <methtype>Method Type; field, lab, etc</methtype>
+        <methdesc>
+  Site description This analysis combines the use of high frequency data
+  from a long term study site (Emerald Lake) with summer lake
+  temperature data from an additional 18 lakes scattered throughout the
+  Sierra Nevada of California. Emerald Lake is located in Sequoia-Kings
+  Canyon National Park in the southern Sierra Nevada. The lake is 2.7 ha
+  in area, has a maximum depth of 10 m, and a morphometry typical of
+  glacially scoured mountain lakes. The lake is representative of
+  thousands of lakes located throughout the Sierra Nevada (Melack and
+  Stoddard 1991; Tonnessen 1991; Sickman et al. 2001). The 18 additional
+  lakes are part of the U.S. National Park Service Inventory Monitoring
+  Program or lakes we had historically sampled. Elevation, lake area,
+  and maximum depth ranges in these lakes were 2475 to 3770 m.a.s.l.,
+  0.7 to 12.6 ha, and 5.1 to 35.0 m, respectively. Lakes shallower than
+  5 m were excluded as heat budget dynamics were expected to differ from
+  deeper stratified lakes. Lakes used in this analysis span subalpine
+  and alpine zones where a majority of precipitation falls as snow
+  between October and April. Snowmelt volume in an average year exceeds
+  total lake volume for many lakes, which means lake residence times can
+  range from a few days to over a year on a seasonal basis (Sadro et al.
+  2018).
+
+  Meteorological and hydrological data Meteorological measurements were
+  made at a station located approximately 50 m from the Emerald Lake
+  shore. Air temperature, relative humidity, short and longwave
+  radiation, and wind speed were collected at 10 s intervals and
+  recorded as hourly averages (Sadro et al. 2018). Instruments were
+  mounted at a height approximately 5.5 m above ground level and
+  included: data logger (Campbell Scientific), air temperature and
+  relative humidity (Vaisala ES 120), wind speed (R.M. Young Wind
+  Monitor; 1.0 m s-1 threshold, plus/minus 0.3 m s-1accuracy),
+  downwelling shortwave radiation (285 – 2800 nm; Eppley Precision
+  Spectral Pyranometer), and downwelling longwave radiation (3.5 to 50
+  um; Eppley Precision Infrared Pyrgeometer). Snow water equivalent
+  (SWE), was computed by measuring snow depth and density at multiple
+  locations throughout the Emerald Lake watershed at the time of maximum
+  accumulation in late March or early April (Sadro et al. 2018). The
+  date of ice-off was determined through visual inspection of Landsat 5,
+  7, and 8 GeoTIFF images containing Emerald Lake
+  (http://earthexplorer.usgs.gov). Given the 16 day interval between
+  successive Landsat images, ice-out date was determined as the
+  mid-point between the dates of two Landsat scenes, one containing ice
+  and the other ice-free, resulting in an uncertainty of about 8 days or
+  10 percent of the range in ice-out dates. In years where cloud cover
+  prevented visual determination of ice-out within a two week period, no
+  ice-out date was recorded. Discharge was measured in the outlet stream
+  of Emerald Lake using a calibrated V-notch weir and vented pressure
+  transducers located approximately 5 m downstream from the lake. A
+  continuous record of stage was computed from high frequency pressure
+  measurements using linear regressions between pressure and staff gauge
+  measurements. Discharge was computed from the stage record using a
+  rating curve. Groundwater inputs to Emerald Lake are small, and we
+  assume outflows = inflows (Kattelmann and Elder 1991) and detailed
+  descriptions of hydrological methods have been published (Sadro et al.
+  2018). Emerald Lake outlet temperature was measured at 10 s intervals
+  with a thermistor located at the weir and recoded as hourly averages
+  on a Campbell Scientific data logger. Water temperatures in the 18
+  additional lakes used in the scaling analysis were measured manually
+  at the outlet using a multiparameter sensor (Yellow Springs
+  Instruments, Inc.). We used outlet temperature (OT) in our analysis as
+  it was the most comprehensive dataset available. It is a good
+  approximation for epilimnetic temperature in Emerald Lake because
+  water clarity is high, maximum lake depth is only 10 m, and a majority
+  of the lake volume often falls within the active mixing layer. Daily
+  mean outlet and epilimnetic temperatures in Emerald Lake are highly
+  correlated, especially in the spring and summer. Root mean square
+  error (RMSE) is lower in the spring and summer (0.5 – 0.6 degrees C)
+  than in the autumn (1.8 degrees C), when discharge is low and outlet
+  temperature becomes more sensitive to changes in air temperature. Data
+  processing and statistical analyses Elevation-specific SWE data were
+  derived by computing mean SWE corresponding to 100 m.a.s.l. elevation
+  bins from all available snow course or pillow sites
+  (http://cdec.water.ca.gov/snow/current/snow/index.html). SWE anomaly
+  was computed as departure from the long term mean. Years when SWE
+  anomaly was less than -500 mm were classified as “drought” (27 percent
+  quantile), &gt; +500 mm anomaly as “wet” (74 percent quantile), and
+  plus/minus 500 mm anomaly as “average”. Where analyses were done on a
+  seasonal basis, winter was defined as December – February, spring as
+  March – May, summer as June – August, and autumn as September –
+  November. Additional details regarding data analysis are provided in
+  the supplemental section. For meteorological data, hourly values were
+  used to compute daily means. Data gaps of less than 8 h were filled
+  using linear interpolation at the hourly time scale. If more than 8 h
+  of data were missing for an individual day, a daily mean was not
+  computed and the day was treated as a data gap at the daily time
+  scale. Data gaps at the daily time scale that spanned less than 7
+  consecutive days were filled using linear interpolation between
+  existing data; longer data gaps were filled using linear regression
+  with other meteorological stations. When using regression to fill data
+  gaps, data from the closest station was used preferentially (only
+  significant models were used; R2 greater than 0.78). Seasonal and
+  annual mean values were computed from daily values.
+</methdesc>
+      </method>
+      <method>
+        <methtype>Sampling methods</methtype>
+        <methdesc/>
+      </method>
+      <procstep>
+        <procdesc>Read Methods description above if applies</procdesc>
+        <procdate>Read method descriptions if applicable</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Mean_annual_and_seasonal_data.csv</enttypl>
+        <enttypd>Annually and seasonally compiled data</enttypd>
+        <enttypds>N/A</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Year:::</attrlabl>
+        <attrdef>Year</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1983</rdommin>
+            <rdommax>2015</rdommax>
+            <attrunit>nominalYear</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>climate_class:::</attrlabl>
+        <attrdef>Climate class</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <udom>Climate class</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>snow_water_equivalent_annual_total:::</attrlabl>
+        <attrdef>SWE, annual total</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>105</rdommin>
+            <rdommax>3177</rdommax>
+            <attrunit>millimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>snow_water_equivalent_annual_anomaly:::</attrlabl>
+        <attrdef>SWE, annual anomaly</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1184</rdommin>
+            <rdommax>1888</rdommax>
+            <attrunit>millimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>discharge_annual_total:::</attrlabl>
+        <attrdef>Discharge, annual total</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>425362</rdommin>
+            <rdommax>2422716</rdommax>
+            <attrunit>cubicMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ice_out_date:::</attrlabl>
+        <attrdef>Ice-out date</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>130</rdommin>
+            <rdommax>209</rdommax>
+            <attrunit>nominalDay</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>autumn_overturn_date:::</attrlabl>
+        <attrdef>Autumn overturn date</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>233</rdommin>
+            <rdommax>299</rdommax>
+            <attrunit>nominalDay</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>X75_percent_cumuluative_discharge_date:::</attrlabl>
+        <attrdef>Date of 75% cumulative discharge</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>241</rdommin>
+            <rdommax>298</rdommax>
+            <attrunit>nominalDay</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_mean_annual:::</attrlabl>
+        <attrdef>Emerald outlet temperature, mean annual</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>3.5</rdommin>
+            <rdommax>7.1</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_max_annual:::</attrlabl>
+        <attrdef>Emerald outlet temperature, max annual</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>13.3</rdommin>
+            <rdommax>20</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_mean_autumn:::</attrlabl>
+        <attrdef>Emerald outlet temperature, mean autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>5.5</rdommin>
+            <rdommax>9.9</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_mean_spring:::</attrlabl>
+        <attrdef>Emerald outlet temperature, mean spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>4.2</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_mean_summer:::</attrlabl>
+        <attrdef>Emerald outlet temperature, mean summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>4.4</rdommin>
+            <rdommax>17.4</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_mean_winter:::</attrlabl>
+        <attrdef>Emerald outlet temperature, mean winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.2</rdommin>
+            <rdommax>1.2</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_anomaly_annual:::</attrlabl>
+        <attrdef>Emerald outlet temperature, anomaly annual</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-2.2</rdommin>
+            <rdommax>1.4</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_anomaly_spring:::</attrlabl>
+        <attrdef>Emerald outlet temperature, anomaly spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.9</rdommin>
+            <rdommax>3.3</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_anomaly_summer:::</attrlabl>
+        <attrdef>Emerald outlet temperature, anomaly summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-8.4</rdommin>
+            <rdommax>4.6</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Emerald_outlet_temperature_anomaly_autumn:::</attrlabl>
+        <attrdef>Emerald outlet temperature, anomaly autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-3.2</rdommin>
+            <rdommax>1.2</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_temperature_mean_annual:::</attrlabl>
+        <attrdef>Air temperature, mean annual</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>3.3</rdommin>
+            <rdommax>6.7</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_temperature_mean_spring:::</attrlabl>
+        <attrdef>Air temperature, mean spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.6</rdommin>
+            <rdommax>4.7</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_temperature_mean_summer:::</attrlabl>
+        <attrdef>Air temperature, mean summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>9.1</rdommin>
+            <rdommax>14.9</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_tempeature_mean_autumn:::</attrlabl>
+        <attrdef>Air temperature, mean autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>3.1</rdommin>
+            <rdommax>8.4</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_temperature_mean_winter:::</attrlabl>
+        <attrdef>Air temperature, mean winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-3.6</rdommin>
+            <rdommax>1.1</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Wind_speed_mean_autumn:::</attrlabl>
+        <attrdef>Wind speed, mean autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.8</rdommin>
+            <rdommax>3.9</rdommax>
+            <attrunit>metersPerSecond</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Wind_direction_mean_autumn:::</attrlabl>
+        <attrdef>Wind direction, mean autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>143.5</rdommin>
+            <rdommax>246.3</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Relative_humidity_mean_autumn:::</attrlabl>
+        <attrdef>Relative humidity, mean autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>37.1</rdommin>
+            <rdommax>54.1</rdommax>
+            <attrunit>dimensionless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shortwave_radiation_mean_autumn:::</attrlabl>
+        <attrdef>Shortwave radiation, mean autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>118.3</rdommin>
+            <rdommax>162.9</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longwave_radiation_mean_autumn:::</attrlabl>
+        <attrdef>Longwave radiation, mean autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>243.4</rdommin>
+            <rdommax>280.2</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Wind_speed_mean_spring:::</attrlabl>
+        <attrdef>Wind speed, mean spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.3</rdommin>
+            <rdommax>2</rdommax>
+            <attrunit>metersPerSecond</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Wind_direction_mean_spring:::</attrlabl>
+        <attrdef>Wind direction, mean spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>135.2</rdommin>
+            <rdommax>240.1</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Relative_humidity_mean_spring:::</attrlabl>
+        <attrdef>Relative humidity, mean spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>46.2</rdommin>
+            <rdommax>73.6</rdommax>
+            <attrunit>dimensionless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shortwave_radiation_mean_spring:::</attrlabl>
+        <attrdef>Shortwave radiation, mean spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>174.5</rdommin>
+            <rdommax>244.7</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longwave_radiation_mean_spring:::</attrlabl>
+        <attrdef>Longwave radiation, mean spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>241.3</rdommin>
+            <rdommax>272.9</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Wind_speed_mean_summer:::</attrlabl>
+        <attrdef>Wind speed, mean summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.3</rdommin>
+            <rdommax>4.2</rdommax>
+            <attrunit>metersPerSecond</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Wind_direction_mean_summer:::</attrlabl>
+        <attrdef>Wind direction, mean summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>120.1</rdommin>
+            <rdommax>245.4</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Relative_humidity_mean_summer:::</attrlabl>
+        <attrdef>Relative humidity, mean summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>37.5</rdommin>
+            <rdommax>53.9</rdommax>
+            <attrunit>dimensionless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shortwave_radiation_mean_summer:::</attrlabl>
+        <attrdef>Shortwave radiation, mean summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>215.7</rdommin>
+            <rdommax>309.5</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longwave_radiation_mean_summer:::</attrlabl>
+        <attrdef>Longwave radiation, mean summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>280.7</rdommin>
+            <rdommax>312.3</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Wind_speed_mean_winter:::</attrlabl>
+        <attrdef>Wind speed, mean winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.6</rdommin>
+            <rdommax>5</rdommax>
+            <attrunit>metersPerSecond</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Wind_direction_mean_winter:::</attrlabl>
+        <attrdef>Wind direction, mean winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>114.2</rdommin>
+            <rdommax>245.1</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Relative_humidity_mean_winter:::</attrlabl>
+        <attrdef>Relative humidity, mean winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>34.7</rdommin>
+            <rdommax>56.4</rdommax>
+            <attrunit>dimensionless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shortwave_radiation_mean_winter:::</attrlabl>
+        <attrdef>Shortwave radiation, mean winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>61.7</rdommin>
+            <rdommax>83</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longwave_radiation_mean_winter:::</attrlabl>
+        <attrdef>Longwave radiation, mean winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>216.7</rdommin>
+            <rdommax>260.9</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shortwave_radiation_total_autumn:::</attrlabl>
+        <attrdef>Shortwave radiation, total autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>258325</rdommin>
+            <rdommax>355815</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longwave_radiation_total_autumn:::</attrlabl>
+        <attrdef>Longwave radiation, total autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>531687</rdommin>
+            <rdommax>611987</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shortwave_radiation_total_spring:::</attrlabl>
+        <attrdef>Shortwave radiation, total spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>385267</rdommin>
+            <rdommax>540358</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longwave_radiation_total_spring:::</attrlabl>
+        <attrdef>Longwave radiation, total summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>532703</rdommin>
+            <rdommax>602587</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shortwave_radiation_total_summer:::</attrlabl>
+        <attrdef>Shortwave radiation, total summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>476334</rdommin>
+            <rdommax>683477</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longwave_summer_total_summer:::</attrlabl>
+        <attrdef>Longwave radiation, total summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>625030</rdommin>
+            <rdommax>689541</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shortwave_radiation_total_winter:::</attrlabl>
+        <attrdef>Shortwave radiation, total winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>133186</rdommin>
+            <rdommax>179337</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longwave_radiation_total_winter:::</attrlabl>
+        <attrdef>Longwave radiation, total winter</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>468026</rdommin>
+            <rdommax>563616</rdommax>
+            <attrunit>wattsPerSquareMeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_temperature_anomaly_annual:::</attrlabl>
+        <attrdef>Air temperature, anomaly annual</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.8</rdommin>
+            <rdommax>1.6</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_temperature_anomaly_spring:::</attrlabl>
+        <attrdef>Air temperature, anomaly spring</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-3.3</rdommin>
+            <rdommax>2.1</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_temperature_anomaly_autumn:::</attrlabl>
+        <attrdef>Air temperature, anomaly autumn</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-3.1</rdommin>
+            <rdommax>2.2</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Air_temperature_anomaly_summer:::</attrlabl>
+        <attrdef>Air temperature, anomaly summer</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-3.6</rdommin>
+            <rdommax>2.2</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Mean_daily_outlet_temperature.csv</enttypl>
+        <enttypd>Mean daily outlet temperature</enttypd>
+        <enttypds>N/A</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Date:::</attrlabl>
+        <attrdef>Date</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <udom>Date time</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>outlet_water_temperature:::</attrlabl>
+        <attrdef>Emerald Lake outlet temperature</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>20</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Mean_summer_water_temp_19_lakes.csv</enttypl>
+        <enttypd>Mean summer water temperature in '19 lakes'</enttypd>
+        <enttypds>N/A</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Lake_name:::</attrlabl>
+        <attrdef>Lake name</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <udom>Lake name</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Year:::</attrlabl>
+        <attrdef>Year</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1991</rdommin>
+            <rdommax>2015</rdommax>
+            <attrunit>nominalYear</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Maximum_summer_water_temperature:::</attrlabl>
+        <attrdef>Maximum summer water temperature</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>8.6</rdommin>
+            <rdommax>23.1</rdommax>
+            <attrunit>celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Mean_elevation_specific_Sierra_wide_SWE:::</attrlabl>
+        <attrdef>Mean elevation-specific Sierra-wide SWE</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>32</rdommin>
+            <rdommax>1518</rdommax>
+            <attrunit>millimeter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Modeled_thermal_sensitivity_in_1625_lakes.csv</enttypl>
+        <enttypd>Modeled thermal sensitivity in '1625 lakes'</enttypd>
+        <enttypds>N/A</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>CAFW_lakes_ID:::</attrlabl>
+        <attrdef>California Fish and Wildlife lake ID</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <udom>California Fish and Wildlife lake ID</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CAFW_lake_name:::</attrlabl>
+        <attrdef>California Fish and Wildlife lake name</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <udom>California Fish and Wildlife lake name</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LAT:::</attrlabl>
+        <attrdef>Latitude</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>36.27</rdommin>
+            <rdommax>39.4</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LON:::</attrlabl>
+        <attrdef>Longitude</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-120.43</rdommin>
+            <rdommax>-118.11</rdommax>
+            <attrunit>degree</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Elevation:::</attrlabl>
+        <attrdef>Elevation above sea level</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2282</rdommin>
+            <rdommax>3937</rdommax>
+            <attrunit>meter</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Thermal_sensitivity:::</attrlabl>
+        <attrdef>Deg C per 10 cm decline in SWE</attrdef>
+        <attrdefs>N/A</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.18</rdommin>
+            <rdommax>1.76</rdommax>
+            <attrunit>thermalSensitivity</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Sadro Sadro</cntper>
+          <cntorg>University of California Davis</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <city>N/A</city>
+          <state>N/A</state>
+          <postal>N/A</postal>
+        </cntaddr>
+        <cntvoice>N/A</cntvoice>
+        <cntfax/>
+        <cntemail>ssadro@ucdavis.edu</cntemail>
+        <hours>N/A</hours>
+        <cntinst>N/A</cntinst>
+      </cntinfo>
+    </distrib>
+    <resdesc>edi.237.1</resdesc>
+    <distliab>distribution liability information is not available</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>ASCII</formname>
+          <asciistr>
+            <recdel>\r\n</recdel>
+            <numheadl>1</numheadl>
+            <orienta>columnmajor</orienta>
+            <casesens>N/A</casesens>
+            <authent>33fbbd2f3ee8f6595a955893cdfec19b</authent>
+            <quotech>N/A</quotech>
+            <datafiel>
+              <dfieldnm>Field Name data is included as part of the Entity/Attribute element (eainfo).</dfieldnm>
+              <dfwidthd>Single delimter for all fields: ,</dfwidthd>
+            </datafiel>
+          </asciistr>
+          <formcont>See Entity/Attribute element </formcont>
+          <filedec>No compression applied</filedec>
+          <transize>8963 byte</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://pasta.lternet.edu/package/data/eml/edi/237/1/ca930a9b3abceca1f6cc50057185c239</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>ASCII</formname>
+          <asciistr>
+            <recdel>\r\n</recdel>
+            <numheadl>1</numheadl>
+            <orienta>columnmajor</orienta>
+            <casesens>N/A</casesens>
+            <authent>73c43b7db62397bb0b89befcc2008907</authent>
+            <quotech>N/A</quotech>
+            <datafiel>
+              <dfieldnm>Field Name data is included as part of the Entity/Attribute element (eainfo).</dfieldnm>
+              <dfwidthd>Single delimter for all fields: ,</dfwidthd>
+            </datafiel>
+          </asciistr>
+          <formcont>See Entity/Attribute element </formcont>
+          <filedec>No compression applied</filedec>
+          <transize>109510 byte</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://pasta.lternet.edu/package/data/eml/edi/237/1/3a55952571ae1276ab46ded8ae6233a1</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>ASCII</formname>
+          <asciistr>
+            <recdel>\r\n</recdel>
+            <numheadl>1</numheadl>
+            <orienta>columnmajor</orienta>
+            <casesens>N/A</casesens>
+            <authent>f7afa1a6fd10ea20171f3c8b520e4ed6</authent>
+            <quotech>N/A</quotech>
+            <datafiel>
+              <dfieldnm>Field Name data is included as part of the Entity/Attribute element (eainfo).</dfieldnm>
+              <dfwidthd>Single delimter for all fields: ,</dfwidthd>
+            </datafiel>
+          </asciistr>
+          <formcont>See Entity/Attribute element </formcont>
+          <filedec>No compression applied</filedec>
+          <transize>2374 byte</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://pasta.lternet.edu/package/data/eml/edi/237/1/8901b556e5b5d4df5955c1f9b7175c88</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <digform>
+        <digtinfo>
+          <formname>ASCII</formname>
+          <asciistr>
+            <recdel>\r\n</recdel>
+            <numheadl>1</numheadl>
+            <orienta>columnmajor</orienta>
+            <casesens>N/A</casesens>
+            <authent>ed7ac73cb9f62d94bb2ec2ac1aa7eda3</authent>
+            <quotech>N/A</quotech>
+            <datafiel>
+              <dfieldnm>Field Name data is included as part of the Entity/Attribute element (eainfo).</dfieldnm>
+              <dfwidthd>Single delimter for all fields: ,</dfwidthd>
+            </datafiel>
+          </asciistr>
+          <formcont>See Entity/Attribute element </formcont>
+          <filedec>No compression applied</filedec>
+          <transize>93910 byte</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://pasta.lternet.edu/package/data/eml/edi/237/1/92ca49824c31d21a2817577d27775809</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>N/A</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>2018-08-16</metd>
+    <metrd>N/A</metrd>
+    <metfrd>N/A</metfrd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Steve Sadro</cntper>
+          <cntorg>University of California Davis</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <city>N/A</city>
+          <state>N/A</state>
+          <postal>N/A</postal>
+        </cntaddr>
+        <cntvoice>N/A</cntvoice>
+        <cntemail>ssadro@ucdavis.edu</cntemail>
+        <hours>N/A</hours>
+        <cntinst>N/A</cntinst>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC/NBII Content Standard for Digital Geospatial Metadata (from Ecological Metadata Langualge 2.x)</metstdn>
+    <metstdv>1999 Version (from Ecological Metadata Langualge 2.x)</metstdv>
+  </metainfo>
+</metadata>
