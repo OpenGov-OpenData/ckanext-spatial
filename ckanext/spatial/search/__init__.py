@@ -23,6 +23,7 @@ class SpatialSearchBackend:
 
         try:
             geometry = json.loads(geom_from_metadata)
+            return geometry
         except (AttributeError, ValueError) as e:
             log.error(
                 "Geometry not valid JSON {}, not indexing :: {}".format(
@@ -31,16 +32,20 @@ class SpatialSearchBackend:
             )
             return None
 
-        return geometry
-
     def shape_from_geometry(self, geometry):
         try:
             shape = shapely.geometry.shape(geometry)
+            return shape
         except GeometryError as e:
             log.error("{}, not indexing :: {}".format(e, json.dumps(geometry)[:100]))
             return None
-
-        return shape
+        except Exception as e:
+            log.error(
+                "Error parsing geometry {}, not indexing :: {}".format(
+                    e, json.dumps(geometry)[:100]
+                )
+            )
+            return None
 
 
 class SolrBBoxSearchBackend(SpatialSearchBackend):

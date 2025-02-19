@@ -74,6 +74,9 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install pytest-ckan
+        # Install unzip for SonarQube Scan
+        apt-get update
+        apt-get install unzip -y
 
     - name: Install harvester
       run: |
