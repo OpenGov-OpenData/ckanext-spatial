@@ -23,7 +23,7 @@ jobs:
 # Unsupported versions
 #          - ckan-version: "2.11"
 #            ckan-image: "ckan/ckan-dev:2.11-py3.10"
-#            solr-image: "2.10-solr9-spatial"
+#            solr-image: "2.11-solr9-spatial"
 #            harvester-version: 'master'
 #          - ckan-version: "2.10"
 #            ckan-image: "ckan/ckan-dev:2.10-py3.10"
@@ -31,7 +31,7 @@ jobs:
 #            harvester-version: 'master'
           - ckan-version: 2.9
             ckan-image: "amercader/ckan-dev:2.9-py3.9"
-            solr-image: 2.9-solr9-spatial
+            solr-image: 2.9-solr8-spatial
             harvester-version: 'master'
       fail-fast: false
     
@@ -64,6 +64,7 @@ jobs:
 
     - name: Install dependencies (common)
       run: |
+        apt-get update
         DEBIAN_FRONTEND=noninteractive apt-get --assume-yes --quiet install \
           python3-dev \
           libxml2-dev \
@@ -74,6 +75,9 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install pytest-ckan
+        # Install unzip for SonarQube Scan
+        apt-get update
+        apt-get install unzip -y
 
     - name: Install harvester
       run: |
@@ -99,6 +103,7 @@ jobs:
 
     - name: Run tests
       run: pytest --ckan-ini=test.ini --cov=ckanext.spatial --cov-report term-missing --cov-report xml:coverage.xml --cov-append --disable-warnings ckanext/spatial/tests
+
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       with:
